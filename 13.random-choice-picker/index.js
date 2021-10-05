@@ -12,8 +12,9 @@ textarea.addEventListener('keyup',(e)=>{
         setTimeout(()=>{
             e.target.value = ''
         },10)
-    }
     randomSelect()
+
+    }
 })
 
 function createTag(input){
