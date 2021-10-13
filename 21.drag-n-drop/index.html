@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Drag N Drop</title>
+</head>
+
+<body>
+
+      <div class="empty">
+      <div class="fill" draggable="true"></div>
+    </div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+
+
+    <script src="index.js"></script>
+    <script>
+        function toFmtThousand(num) {
+            console.log(num)
+            // if (!window.validate.isNumber(num, "float")) {
+            //     return num;
+            // }
+            let result = num.toString().replace(/\d+/, function (n) {
+                //这里的n是外层num的数字形式  "1000000num" -->  "1000000"
+
+                //将数字三个一组,进行添加逗号.
+                //先行断言,一数字后面跟着是哪个数字的话,才会匹配这一个数组  比如 1234 会匹配这个1  而 234不会匹配(因为口面没有跟着三个数字)
+                return n.replace(/(\d)(?=(\d{3})+$)/g, function ($1) {
+                    return $1 + ",";
+                });
+            })
+            return result;
+        }
+
+
+        let a = toFmtThousand(100000000)
+        console.log(a)
+    </script>
+</body>
+
+</html>
