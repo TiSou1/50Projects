@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf0f1;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+.card{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+}
+
+.card-header img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card-content{
+    background-color: #fff;
+    padding: 30px;
+}
+
+.card-title{
+    height:20px;
+    margin: 0;
+}
+
+.card-excerpt{
+    color: #777;
+    margin: 10px 0 20px;
+}
+
+.author{
+    display: flex;
+}
+
+.profile-img{
+    border-radius: 50%;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+}
+
+.author-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 100px;
+}
+
+.author-info small{
+    color: #aaa;
+    margin-top: 5px;
+}
+
+
+/* 这块是关键 */
+.animated-bg{
+/* 以第二个颜色进行区别 */
+    background-image: linear-gradient(
+        /* to right, */
+        90deg,
+        #f6f7f8 0%,
+        /* #edeef1 10%, */
+        red 10%,
+        #f6f7f8 20%,
+        #f6f7f8 100%
+    );
+    /* background-image: linear-gradient(
+        to right,
+        red 0%,
+        blue 10%,
+        red 20%,
+        red 100%
+    ); */
+    background-size:200% 100%;
+    animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text{
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0;
+    height: 10px;
+    width: 100%;
+}
+
+/* 这里负责背景的移动 */
+@keyframes bgPos{
+    0%{
+        background-position: 50% 0;
+    }
+
+    100%{
+        background-position: -130% 0;
+    }
+}
