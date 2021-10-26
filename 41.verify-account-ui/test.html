@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <style>
+        ul {
+            display: flex;
+            position: absolute;
+            width: 800px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding: 20px;
+            font-size: 24px;
+            color: #000;
+            line-height: 1;
+            transition: 0.2s all linear;
+            cursor: pointer;
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 0;
+            height: 100%;
+            border-bottom: 2px solid #000;
+            transition: 0.2s all linear;
+        }
+
+        li:hover::before {
+            width: 100%;
+            top: 0;
+            left: 0;
+            transition-delay: 0.1s;
+            border-bottom-color: #000;
+            z-index: -1;
+        }
+
+        li:hover~li::before {
+            left: 0;
+        }
+
+        li:active~li {
+            background: red;
+            color: #fff;
+        }
+
+        /* ~ 会选择这个节点的所有符合条件的兄弟
+   + 只会选择相邻的兄弟
+*/
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>不可思议</li>
+        <li>想都别想</li>
+        <li>耳濡目染</li>
+        <li>身怀绝技</li>
+        <li>临门一脚</li>
+    </ul>
+</body>
+
+</html>
